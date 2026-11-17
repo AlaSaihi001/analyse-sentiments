@@ -1,0 +1,457 @@
+{
+ "n_rows": 106355,
+ "n_cols": 2,
+ "dtypes": {
+  "text": "str",
+  "emotion": "str"
+ },
+ "file_size_mb": 11.9,
+ "missing": 0,
+ "dup_rows": 25529,
+ "dup_text": 25569,
+ "len_stats": {
+  "count": 106355.0,
+  "mean": 20.246147336749566,
+  "std": 11.5103555736711,
+  "min": 1.0,
+  "25%": 12.0,
+  "50%": 18.0,
+  "75%": 26.0,
+  "max": 178.0
+ },
+ "short": 914,
+ "long": 203,
+ "url_at": 1152,
+ "digits": 2826,
+ "non_ascii": 571,
+ "mojibake": 66,
+ "html_entities": 1386,
+ "upper": 18011,
+ "punct": 18429,
+ "classes_raw": {
+  "fun": 10000,
+  "surprise": 10000,
+  "enthusiasm": 10000,
+  "happiness": 10000,
+  "hate": 10000,
+  "love": 10000,
+  "relief": 10000,
+  "anger": 10000,
+  "sadness": 9999,
+  "neutral": 9998,
+  "empty": 6358
+ },
+ "conflicts_raw": 28,
+ "style": [
+  {
+   "emotion": "anger",
+   "pct_majuscules": 0.2465,
+   "pct_ponctuation": 0.2426,
+   "mots_moyens": 20.2527,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "empty",
+   "pct_majuscules": 0.0852,
+   "pct_ponctuation": 0.0874,
+   "mots_moyens": 20.3669,
+   "nb_textes": 6358
+  },
+  {
+   "emotion": "enthusiasm",
+   "pct_majuscules": 0.0563,
+   "pct_ponctuation": 0.0612,
+   "mots_moyens": 20.6532,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "fun",
+   "pct_majuscules": 0.1082,
+   "pct_ponctuation": 0.1218,
+   "mots_moyens": 21.439,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "happiness",
+   "pct_majuscules": 0.3159,
+   "pct_ponctuation": 0.3116,
+   "mots_moyens": 19.0272,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "hate",
+   "pct_majuscules": 0.0592,
+   "pct_ponctuation": 0.0649,
+   "mots_moyens": 21.1419,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "love",
+   "pct_majuscules": 0.0652,
+   "pct_ponctuation": 0.0671,
+   "mots_moyens": 22.8501,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "neutral",
+   "pct_majuscules": 0.0127,
+   "pct_ponctuation": 0.0128,
+   "mots_moyens": 18.1239,
+   "nb_textes": 9998
+  },
+  {
+   "emotion": "relief",
+   "pct_majuscules": 0.0622,
+   "pct_ponctuation": 0.0661,
+   "mots_moyens": 21.957,
+   "nb_textes": 10000
+  },
+  {
+   "emotion": "sadness",
+   "pct_majuscules": 0.4397,
+   "pct_ponctuation": 0.4485,
+   "mots_moyens": 18.3308,
+   "nb_textes": 9999
+  },
+  {
+   "emotion": "surprise",
+   "pct_majuscules": 0.381,
+   "pct_ponctuation": 0.3907,
+   "mots_moyens": 18.6082,
+   "nb_textes": 10000
+  }
+ ],
+ "style_acc": 0.155,
+ "chance": 0.091,
+ "dup_after_clean": 142,
+ "conflicts_after_clean": 63,
+ "steps": [
+  [
+   "Dataset brut",
+   106355
+  ],
+  [
+   "Doublons exacts supprimés",
+   80826
+  ],
+  [
+   "Textes à étiquettes contradictoires supprimés",
+   80758
+  ],
+  [
+   "Filtre de longueur (4 à 60 mots)",
+   79781
+  ],
+  [
+   "Texte nettoyé d'au moins 3 mots",
+   79770
+  ],
+  [
+   "Doublons et contradictions après nettoyage",
+   79565
+  ]
+ ],
+ "n_after": 79565,
+ "removed": 26790,
+ "classes_after": {
+  "neutral": 9790,
+  "sadness": 9074,
+  "happiness": 8988,
+  "love": 8485,
+  "surprise": 7793,
+  "anger": 7333,
+  "relief": 7214,
+  "fun": 6165,
+  "hate": 6151,
+  "enthusiasm": 5180,
+  "empty": 3392
+ },
+ "html_residue": 730,
+ "mojibake_kept": 63,
+ "top_words": [
+  [
+   "love",
+   5898
+  ],
+  [
+   "know",
+   4361
+  ],
+  [
+   "time",
+   4175
+  ],
+  [
+   "people",
+   3557
+  ],
+  [
+   "happy",
+   3295
+  ],
+  [
+   "hate",
+   3216
+  ],
+  [
+   "excited",
+   3172
+  ],
+  [
+   "want",
+   3082
+  ],
+  [
+   "day",
+   3075
+  ],
+  [
+   "little",
+   2922
+  ],
+  [
+   "think",
+   2873
+  ],
+  [
+   "angry",
+   2793
+  ],
+  [
+   "going",
+   2652
+  ],
+  [
+   "life",
+   2624
+  ],
+  [
+   "make",
+   2552
+  ]
+ ],
+ "top_words_emotion": {
+  "anger": [
+   "angry",
+   "discouraged",
+   "outraged",
+   "time",
+   "know",
+   "people"
+  ],
+  "empty": [
+   "avoid",
+   "know",
+   "want",
+   "time",
+   "life",
+   "avoiding"
+  ],
+  "enthusiasm": [
+   "excited",
+   "eager",
+   "time",
+   "know",
+   "little",
+   "new"
+  ],
+  "fun": [
+   "funny",
+   "fun",
+   "joyful",
+   "time",
+   "know",
+   "think"
+  ],
+  "happiness": [
+   "happy",
+   "enjoy",
+   "content",
+   "unhappy",
+   "time",
+   "day"
+  ],
+  "hate": [
+   "hate",
+   "hated",
+   "hateful",
+   "people",
+   "know",
+   "want"
+  ],
+  "love": [
+   "love",
+   "loved",
+   "lovely",
+   "beloved",
+   "know",
+   "people"
+  ],
+  "neutral": [
+   "know",
+   "little",
+   "time",
+   "people",
+   "want",
+   "think"
+  ],
+  "relief": [
+   "comfortable",
+   "uncomfortable",
+   "pleased",
+   "comfort",
+   "know",
+   "people"
+  ],
+  "sadness": [
+   "sad",
+   "depressed",
+   "melancholy",
+   "time",
+   "know",
+   "i'm"
+  ],
+  "surprise": [
+   "surprised",
+   "shocked",
+   "know",
+   "surprise",
+   "time",
+   "quot"
+  ]
+ },
+ "label_checks": [
+  {
+   "mot": "average",
+   "emotion": "anger",
+   "n": 128,
+   "part_emotion": 0.8281,
+   "part_classe": 0.0922
+  },
+  {
+   "mot": "avoid",
+   "emotion": "empty",
+   "n": 550,
+   "part_emotion": 0.9709,
+   "part_classe": 0.0426
+  },
+  {
+   "mot": "function",
+   "emotion": "fun",
+   "n": 163,
+   "part_emotion": 0.9448,
+   "part_classe": 0.0775
+  },
+  {
+   "mot": "whatever",
+   "emotion": "hate",
+   "n": 1119,
+   "part_emotion": 0.8803,
+   "part_classe": 0.0773
+  },
+  {
+   "mot": "unloved",
+   "emotion": "love",
+   "n": 434,
+   "part_emotion": 0.9401,
+   "part_classe": 0.1066
+  },
+  {
+   "mot": "discomfort",
+   "emotion": "relief",
+   "n": 117,
+   "part_emotion": 0.8718,
+   "part_classe": 0.0907
+  },
+  {
+   "mot": "unhappy",
+   "emotion": "happiness",
+   "n": 718,
+   "part_emotion": 0.8579,
+   "part_classe": 0.113
+  }
+ ],
+ "n_train": 63652,
+ "n_test": 15913,
+ "tfidf_dim": 63549,
+ "tfidf_density_pct": 0.0426,
+ "svd_var": [
+  0.0014,
+  0.0029
+ ],
+ "longueur_counts": {
+  "moyen": 24159,
+  "long": 21730,
+  "court": 14005,
+  "tres_long": 3758
+ },
+ "n_clean_bounds": [
+  3,
+  61
+ ],
+ "graph_vocab": 2706,
+ "graph_pairs_any": 873713,
+ "K_table": [
+  {
+   "K": 2,
+   "aretes": 36471,
+   "isoles": 1297,
+   "deg_moyen": 12.2,
+   "homophilie": 0.307
+  },
+  {
+   "K": 3,
+   "aretes": 1761,
+   "isoles": 4735,
+   "deg_moyen": 0.6,
+   "homophilie": 0.325
+  },
+  {
+   "K": 4,
+   "aretes": 105,
+   "isoles": 5850,
+   "deg_moyen": 0.0,
+   "homophilie": 0.343
+  }
+ ],
+ "graph": {
+  "K": 2,
+  "nodes": 6000,
+  "edges": 36471,
+  "density": 0.00203,
+  "deg_mean": 12.16,
+  "deg_max": 208,
+  "isolated": 1297,
+  "components": 1320,
+  "giant": 4656,
+  "homophily": 0.307,
+  "homophily_random": 0.097
+ },
+ "subgraph_nodes": 154,
+ "examples_clean": [
+  {
+   "type": "url_mention",
+   "text": "i feel more outraged when a a href http nomediakings",
+   "clean": "i feel more outraged when a a href http nomediakings",
+   "emotion": "anger"
+  },
+  {
+   "type": "chiffres",
+   "text": "Ay dios mio! 2 weeks left of college!!! AH CAN'T WAIT!!",
+   "clean": "ay dios mio weeks left of college ah can't wait",
+   "emotion": "happiness"
+  },
+  {
+   "type": "majuscules_ponct",
+   "text": "One large coffee and bout 8 sugars.. This rain is not about to take my",
+   "clean": "one large coffee and bout sugars this rain is not about to take my",
+   "emotion": "happiness"
+  },
+  {
+   "type": "non_ascii",
+   "text": "Lï¿½ mï¿½y theo lï¿½n giï¿½ tï¿½i bay kh?p tr?i",
+   "clean": "l m y theo l n gi t i bay kh p tr i",
+   "emotion": "empty"
+  }
+ ]
+}

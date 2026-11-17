@@ -1,0 +1,15 @@
+# Données : à télécharger depuis Kaggle (voir data/README.md) ; les fichiers traités se régénèrent avec les scripts
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/resultats_phase1.json
+!data/processed/resultats_phase2.json
+# Modèles entraînés par l'application
+app/models/
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/

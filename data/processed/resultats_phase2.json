@@ -1,0 +1,339 @@
+{
+ "hasard": {
+  "accuracy": 0.0934,
+  "f1_macro": 0.0876
+ },
+ "svm": {
+  "accuracy": 0.8082,
+  "f1_macro": 0.8144
+ },
+ "logreg": {
+  "accuracy": 0.7963,
+  "f1_macro": 0.8026
+ },
+ "par_emotion": {
+  "anger": {
+   "precision": 0.834,
+   "recall": 0.809,
+   "f1-score": 0.821,
+   "support": 1467
+  },
+  "empty": {
+   "precision": 0.949,
+   "recall": 0.739,
+   "f1-score": 0.831,
+   "support": 678
+  },
+  "enthusiasm": {
+   "precision": 0.948,
+   "recall": 0.855,
+   "f1-score": 0.899,
+   "support": 1036
+  },
+  "fun": {
+   "precision": 0.813,
+   "recall": 0.732,
+   "f1-score": 0.77,
+   "support": 1233
+  },
+  "happiness": {
+   "precision": 0.726,
+   "recall": 0.751,
+   "f1-score": 0.738,
+   "support": 1798
+  },
+  "hate": {
+   "precision": 0.913,
+   "recall": 0.853,
+   "f1-score": 0.882,
+   "support": 1230
+  },
+  "love": {
+   "precision": 0.897,
+   "recall": 0.906,
+   "f1-score": 0.902,
+   "support": 1697
+  },
+  "neutral": {
+   "precision": 0.841,
+   "recall": 0.954,
+   "f1-score": 0.894,
+   "support": 1958
+  },
+  "relief": {
+   "precision": 0.896,
+   "recall": 0.856,
+   "f1-score": 0.875,
+   "support": 1443
+  },
+  "sadness": {
+   "precision": 0.651,
+   "recall": 0.706,
+   "f1-score": 0.678,
+   "support": 1815
+  },
+  "surprise": {
+   "precision": 0.654,
+   "recall": 0.683,
+   "f1-score": 0.668,
+   "support": 1558
+  }
+ },
+ "polarite": {
+  "accuracy": 0.8472,
+  "f1_macro": 0.8382
+ },
+ "polarite_majoritaire": 0.453,
+ "polarite_par_classe": {
+  "negative": {
+   "precision": 0.839,
+   "recall": 0.83,
+   "f1-score": 0.835
+  },
+  "neutral": {
+   "precision": 0.814,
+   "recall": 0.78,
+   "f1-score": 0.797
+  },
+  "positive": {
+   "precision": 0.87,
+   "recall": 0.897,
+   "f1-score": 0.883
+  }
+ },
+ "confusions": [
+  [
+   "surprise",
+   "sadness",
+   0.114
+  ],
+  [
+   "empty",
+   "sadness",
+   0.084
+  ],
+  [
+   "sadness",
+   "surprise",
+   0.082
+  ],
+  [
+   "surprise",
+   "happiness",
+   0.073
+  ],
+  [
+   "happiness",
+   "surprise",
+   0.071
+  ],
+  [
+   "anger",
+   "sadness",
+   0.066
+  ]
+ ],
+ "cv_f1_plis": [
+  0.8144,
+  0.8117,
+  0.8126,
+  0.8203,
+  0.8127
+ ],
+ "cv_f1_moyenne": 0.8143,
+ "cv_f1_ecart_type": 0.0031,
+ "noeuds": [
+  {
+   "representation": "Texte seul (TF-IDF + LR)",
+   "accuracy": 0.7022,
+   "f1_macro": 0.7108
+  },
+  {
+   "representation": "Graphe 1 saut (Â·X)",
+   "accuracy": 0.6067,
+   "f1_macro": 0.6171
+  },
+  {
+   "representation": "Graphe 2 sauts SGC (Â²·X)",
+   "accuracy": 0.5739,
+   "f1_macro": 0.5802
+  },
+  {
+   "representation": "Texte + voisinage (concat.)",
+   "accuracy": 0.7067,
+   "f1_macro": 0.7131
+  }
+ ],
+ "noeuds_split": [
+  4200,
+  1800
+ ],
+ "mots_influents": {
+  "anger": [
+   "angry",
+   "discouraged",
+   "outraged",
+   "enraged",
+   "average",
+   "encourage",
+   "encouraged",
+   "rage"
+  ],
+  "empty": [
+   "empty",
+   "avoid",
+   "avoiding",
+   "avoided",
+   "void",
+   "hollow",
+   "to avoid",
+   "feel empty"
+  ],
+  "enthusiasm": [
+   "excited",
+   "eager",
+   "eager to",
+   "enthusiastic",
+   "and excited",
+   "eagerly",
+   "feel excited",
+   "excited and"
+  ],
+  "fun": [
+   "funny",
+   "joyful",
+   "fun",
+   "function",
+   "funk",
+   "funeral",
+   "amusing",
+   "functional"
+  ],
+  "happiness": [
+   "happy",
+   "unhappy",
+   "content",
+   "enjoy",
+   "discontent",
+   "contented",
+   "joy",
+   "enjoyed"
+  ],
+  "hate": [
+   "hated",
+   "hate",
+   "whatever",
+   "hateful",
+   "hate feeling",
+   "hates",
+   "loathe",
+   "detest"
+  ],
+  "love": [
+   "love",
+   "loved",
+   "beloved",
+   "lovely",
+   "affectionate",
+   "unloved",
+   "loves",
+   "affection"
+  ],
+  "neutral": [
+   "feel",
+   "feeling",
+   "feels",
+   "feelings",
+   "strange",
+   "rotten",
+   "disgusted",
+   "worthwhile"
+  ],
+  "relief": [
+   "uncomfortable",
+   "comfortable",
+   "pleased",
+   "comfort",
+   "please",
+   "relief",
+   "ease",
+   "discomfort"
+  ],
+  "sadness": [
+   "sad",
+   "depressed",
+   "melancholy",
+   "anxiety",
+   "sadness",
+   "concerned",
+   "worry",
+   "worrying"
+  ],
+  "surprise": [
+   "surprised",
+   "shocked",
+   "surprise",
+   "shock",
+   "surprises",
+   "shocking",
+   "sad",
+   "astonishment"
+  ]
+ },
+ "lime": {
+  "he gave an average performance at the match": {
+   "classe": "anger",
+   "poids": [
+    [
+     "average",
+     0.596
+    ],
+    [
+     "he",
+     0.061
+    ],
+    [
+     "an",
+     0.047
+    ],
+    [
+     "match",
+     0.034
+    ],
+    [
+     "the",
+     -0.021
+    ],
+    [
+     "at",
+     0.014
+    ]
+   ]
+  },
+  "i feel really unhappy today": {
+   "classe": "happiness",
+   "poids": [
+    [
+     "unhappy",
+     0.888
+    ],
+    [
+     "feel",
+     -0.106
+    ],
+    [
+     "really",
+     -0.024
+    ],
+    [
+     "i",
+     -0.011
+    ],
+    [
+     "today",
+     0.009
+    ]
+   ]
+  }
+ }
+}
