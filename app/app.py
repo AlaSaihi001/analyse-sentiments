@@ -70,7 +70,7 @@ if st.button("Analyser", type="primary"):
             st.bar_chart(emo.head(5), horizontal=True)
             st.caption("Les scores sont relatifs (calculés à partir des sorties du SVM) : ce ne sont pas de vraies probabilités.")
 
-with st.expander("Limites du modèle"):
+with st.expander("Limites"):
     st.write("Le modèle est entraîné sur des textes généraux en anglais, pas sur des commentaires de réseaux sociaux. "
              "Une partie des étiquettes du jeu semble venir de mots-clés cachés (par exemple « average » → anger, « unhappy » → happiness) : "
              "le modèle réagit à ces mots et ne comprend ni la négation ni le sarcasme.")

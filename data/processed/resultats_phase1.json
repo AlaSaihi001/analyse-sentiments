@@ -131,23 +131,23 @@
    106355
   ],
   [
-   "Doublons exacts supprimés",
+   "Doublons exacts supprim�s",
    80826
   ],
   [
-   "Textes à étiquettes contradictoires supprimés",
+   "Textes � �tiquettes contradictoires supprim�s",
    80758
   ],
   [
-   "Filtre de longueur (4 à 60 mots)",
+   "Filtre de longueur (4 � 60 mots)",
    79781
   ],
   [
-   "Texte nettoyé d'au moins 3 mots",
+   "Texte nettoy� d'au moins 3 mots",
    79770
   ],
   [
-   "Doublons et contradictions après nettoyage",
+   "Doublons et contradictions apr�s nettoyage",
    79565
   ]
  ],
@@ -449,7 +449,7 @@
   },
   {
    "type": "non_ascii",
-   "text": "Lï¿½ mï¿½y theo lï¿½n giï¿½ tï¿½i bay kh?p tr?i",
+   "text": "L� m�y theo l�n gi� t�i bay kh?p tr?i",
    "clean": "l m y theo l n gi t i bay kh p tr i",
    "emotion": "empty"
   }
