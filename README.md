@@ -1,63 +1,70 @@
-# Analyse de sentiments : polarité et émotions
+# Analyse de sentiments et détection d’émotions
 
-Projet de Data Mining (ING Info 2, 2026-2027) : classer des textes en anglais selon leur **polarité** (3 classes) et leur **émotion** (11 classes), puis tester si un **graphe de textes** (mots-clés communs) améliore la prédiction.
+Ce projet étudie la classification de textes en anglais. Il prédit à la fois une émotion parmi 11 catégories et une polarité parmi 3 catégories. Il compare également des modèles de texte à une approche utilisant un graphe reliant les textes qui partagent des mots-clés.
 
-**Auteurs :** Ala Eddine Saihi, Jawaher Fakraoui — **Encadrante :** Mariem Ghzara
+## Présentation
 
-## État d'avancement
-- [x] **Phase 1** : business understanding, collecte, compréhension et préparation des données, graphe de textes
-- [x] **Phase 2** : modélisation (baselines, polarité, validation croisée, classification de nœuds)
-- [x] **Phase 3** : explication (mots influents, LIME), application de démonstration, rapport final
+Le projet comprend le nettoyage des données, l’entraînement et l’évaluation de modèles, l’analyse des résultats, ainsi qu’une petite application interactive réalisée avec Streamlit.
 
-## Résultats principaux
-Jeu nettoyé : 79 565 textes (25,2 % supprimés : doublons, contradictions, textes trop courts ou trop longs). Découpage stratifié 63 652 / 15 913.
+| Tâche | Modèle | F1 macro |
+|---|---|---:|
+| Émotions (11 classes) | SVM linéaire | 81,4 % |
+| Émotions (11 classes) | Régression logistique | 80,3 % |
+| Polarité (3 classes) | SVM linéaire | 83,8 % |
 
-| Modèle (jeu de test) | Exactitude | F1 macro |
-|---|---|---|
-| Tirage au hasard (11 émotions) | 9,3 % | 8,8 % |
-| SVM linéaire, 11 émotions | 80,8 % | 81,4 % |
-| Régression logistique, 11 émotions | 79,6 % | 80,3 % |
-| SVM linéaire, polarité (3 classes) | 84,7 % | 83,8 % |
+Ces résultats sont à interpréter avec prudence : certaines étiquettes du jeu de données semblent avoir été attribuées à partir de mots-clés. Le modèle peut donc apprendre des associations de surface plutôt que comprendre le contexte, la négation ou le sarcasme.
 
-Validation croisée à 5 plis (SVM, 11 émotions) : F1 macro 81,4 % ± 0,3 point.
+## Préparer l’environnement
 
-**Le graphe n'améliore pas la prédiction** (classification de 6 000 nœuds, F1 macro) : texte seul 71,1 %, texte + voisinage 71,3 %, voisinage seul 61,7 % (1 saut) et 58,0 % (2 sauts). Le graphe contient pourtant un signal réel : 30,7 % des arêtes relient deux textes de même émotion, contre 9,7 % au hasard.
+Les commandes suivantes sont prévues pour **Git Bash sous Windows**, depuis le dossier du projet :
 
-![Matrice de confusion](plots/09_matrice_confusion.png)
-![Texte contre graphe](plots/10_noeuds_texte_vs_graphe.png)
-
-## Limite importante : la qualité des étiquettes
-Une partie des étiquettes du jeu semble venir d'une recherche automatique de mots-clés, y compris à l'intérieur d'autres mots : 83 % des textes contenant « average » sont étiquetés *anger* (le mot contient « rage »), 97 % de ceux contenant « avoid » sont étiquetés *empty* (« void »), 86 % de ceux contenant « unhappy » sont étiquetés *happiness*. Le modèle apprend cette règle de surface : il ne comprend ni la négation ni le sarcasme. L'explication locale (LIME) le confirme : un seul mot décide de la prédiction. Les scores ci-dessus sont donc à lire avec prudence.
-
-![LIME](plots/12_lime_unhappy.png)
-
-## Structure
-```
-code/     phase1_pipeline.py, phase2_modeling.py (scripts) et les notebooks exécutés
-          phase1_projet_sentiments.ipynb, phase2_modelisation.ipynb
-plots/    12 graphiques générés par le code
-report/   rapport_phase1 (Word et PDF) et rapport_final (Word)
-app/      application de démonstration Streamlit
-data/     voir data/README.md (données à télécharger)
-```
-
-## Utilisation
 ```bash
-pip install -r requirements.txt
-# 1) télécharger le jeu de données (voir data/README.md) dans data/raw/final_dataset.csv
-cd code
-python phase1_pipeline.py      # nettoyage, TF-IDF, graphe -> data/processed et plots 01 à 08
-python phase2_modeling.py      # modèles, validation croisée, LIME -> plots 09 à 12
+python -m venv .venv
+source .venv/Scripts/activate
+python -m pip install -r requirements.txt
 ```
-Les graines aléatoires sont fixées (42). Selon la version de scikit-learn, un score peut varier de ±0,0001.
 
-**Application de démonstration** (après avoir lancé `phase1_pipeline.py`) :
+## Ajouter les données
+
+Le fichier de données n’est pas inclus dans ce dépôt. Téléchargez le jeu [Text Emotion sur Kaggle](https://www.kaggle.com/datasets/prajwalnayakat/text-emotion), puis placez le CSV ici :
+
+```text
+data/raw/final_dataset.csv
+```
+
+Le fichier doit contenir les colonnes `text` et `emotion`. Des précisions sont disponibles dans [data/README.md](data/README.md).
+
+## Exécuter les scripts
+
+Lancez les commandes depuis la racine du projet, dans cet ordre :
+
 ```bash
-cd app
-streamlit run app.py
+python code/phase1_pipeline.py
+python code/phase2_modeling.py
 ```
-Au premier lancement, l'application entraîne le modèle (environ 30 secondes). Elle propose une règle de négation, un correctif ciblé pour des cas comme « unhappy » ; décochée, elle montre le modèle seul.
 
-## Données et licence
-Données : « Text Emotion » (Kaggle, prajwalnayakat), fusion de trois jeux Kaggle ; usage académique. Les données ne sont pas incluses dans ce dépôt. Code sous licence MIT (voir `LICENSE`).
+La première étape prépare les données et le graphe, puis produit les fichiers nécessaires dans `data/processed/` et les graphiques de la phase 1. La deuxième entraîne et évalue les modèles et complète les graphiques.
 
+## Démarrer l’application
+
+Après avoir exécuté la phase 1, démarrez l’application avec :
+
+```bash
+python -m streamlit run app/app.py
+```
+
+Ouvrez ensuite l’adresse locale affichée dans le terminal, généralement `http://localhost:8501`. Au premier démarrage, l’application entraîne et enregistre ses modèles à partir des données préparées.
+
+## Contenu du dépôt
+
+- `code/` : scripts d’analyse et notebooks Jupyter.
+- `app/` : application de démonstration Streamlit.
+- `data/` : instructions sur les données ; les fichiers bruts ne sont pas fournis.
+- `plots/` : graphiques des analyses et des évaluations.
+- `report/` : rapports du projet.
+
+## Crédits et licence
+
+Projet universitaire de Data Mining (ING Info 2, 2026–2027), réalisé par Ala Eddine Saihi et Jawaher Fakraoui, sous l’encadrement de Mariem Ghzara.
+
+Les données proviennent du jeu « Text Emotion » de prajwalnayakat sur Kaggle et ne sont pas redistribuées ici. Le code est sous licence MIT ; voir [LICENSE](LICENSE).
